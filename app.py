@@ -29,5 +29,5 @@ def move_folder(directory):
                 dest = os.path.join(folder_path, filename)
                 shutil.move(src, dest)
 
-rename_files(directory)
+# rename_files(directory)
 move_folder(directory)
