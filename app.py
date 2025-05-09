@@ -18,16 +18,12 @@ def rename_files(directory):
 def move_folder(directory):
     for filename in os.listdir(directory):
         if filename.endswith('.pdf'):
-            base = filename[:-4]
-            parts = base.split(" ")
-            if len(parts) > 1:
-                folder_name = " ".join(parts[:-1])
-                folder_path = os.path.join(directory, folder_name)
-                if not os.path.exists(folder_path):
-                    os.makedirs(folder_path)
-                src = os.path.join(directory, filename)
-                dest = os.path.join(folder_path, filename)
-                shutil.move(src, dest)
+            parts = filename.split(" ")
+            folder_name = " ".join(parts[:-1])
+            folder_path = os.path.join(directory, folder_name)
+            src = os.path.join(directory, filename)
+            dest = os.path.join(folder_path, filename)
+            shutil.move(src, dest)
 
 # rename_files(directory)
 move_folder(directory)
